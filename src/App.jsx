@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import AiChatSenderExample from './examples/AiChatSenderExample'
 import ComponentUsageExample from './examples/ComponentUsageExample'
 import './App.css'
