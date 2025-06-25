@@ -1,0 +1,350 @@
+/* 飞书React组件库全局样式 */
+
+/* CSS变量定义 - 飞书设计系统 */
+:root {
+  /* 品牌色 */
+  --feishu-primary: #1664ff;
+  --feishu-primary-hover: #4080ff;
+  --feishu-primary-active: #0e4ba8;
+  --feishu-primary-light: rgba(22, 100, 255, 0.1);
+  
+  /* 功能色 */
+  --feishu-success: #00b42a;
+  --feishu-success-hover: #23c343;
+  --feishu-success-active: #009a29;
+  --feishu-success-light: rgba(0, 180, 42, 0.1);
+  
+  --feishu-warning: #ff7d00;
+  --feishu-warning-hover: #ff9a33;
+  --feishu-warning-active: #d25f00;
+  --feishu-warning-light: rgba(255, 125, 0, 0.1);
+  
+  --feishu-error: #f53f3f;
+  --feishu-error-hover: #f76560;
+  --feishu-error-active: #cb272d;
+  --feishu-error-light: rgba(245, 63, 63, 0.1);
+  
+  /* 中性色 */
+  --feishu-text-1: #1d2129;
+  --feishu-text-2: #4e5969;
+  --feishu-text-3: #86909c;
+  --feishu-text-4: #c9cdd4;
+  
+  /* 背景色 */
+  --feishu-bg-1: #ffffff;
+  --feishu-bg-2: #f7f8fa;
+  --feishu-bg-3: #f2f3f5;
+  --feishu-bg-4: #e5e6eb;
+  --feishu-bg-5: #c9cdd4;
+  
+  /* 边框色 */
+  --feishu-border-1: #f2f3f5;
+  --feishu-border-2: #e5e6eb;
+  --feishu-border-3: #c9cdd4;
+  --feishu-border-4: #86909c;
+  
+  /* 阴影 */
+  --feishu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --feishu-shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --feishu-shadow-3: 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+  
+  /* 字体 */
+  --feishu-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --feishu-font-family-code: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  
+  /* 字体大小 */
+  --feishu-font-size-12: 12px;
+  --feishu-font-size-14: 14px;
+  --feishu-font-size-16: 16px;
+  --feishu-font-size-18: 18px;
+  --feishu-font-size-20: 20px;
+  --feishu-font-size-24: 24px;
+  --feishu-font-size-28: 28px;
+  --feishu-font-size-32: 32px;
+  
+  /* 行高 */
+  --feishu-line-height-1: 1;
+  --feishu-line-height-2: 1.2;
+  --feishu-line-height-3: 1.4;
+  --feishu-line-height-4: 1.6;
+  --feishu-line-height-5: 1.8;
+  
+  /* 字重 */
+  --feishu-font-weight-400: 400;
+  --feishu-font-weight-500: 500;
+  --feishu-font-weight-600: 600;
+  --feishu-font-weight-700: 700;
+  
+  /* 圆角 */
+  --feishu-border-radius-2: 2px;
+  --feishu-border-radius-4: 4px;
+  --feishu-border-radius-6: 6px;
+  --feishu-border-radius-8: 8px;
+  --feishu-border-radius-12: 12px;
+  --feishu-border-radius-16: 16px;
+  --feishu-border-radius-circle: 50%;
+  
+  /* 间距 */
+  --feishu-spacing-2: 2px;
+  --feishu-spacing-4: 4px;
+  --feishu-spacing-6: 6px;
+  --feishu-spacing-8: 8px;
+  --feishu-spacing-12: 12px;
+  --feishu-spacing-16: 16px;
+  --feishu-spacing-20: 20px;
+  --feishu-spacing-24: 24px;
+  --feishu-spacing-32: 32px;
+  --feishu-spacing-40: 40px;
+  --feishu-spacing-48: 48px;
+  --feishu-spacing-64: 64px;
+  
+  /* 动画时长 */
+  --feishu-duration-fast: 0.1s;
+  --feishu-duration-normal: 0.2s;
+  --feishu-duration-slow: 0.3s;
+  
+  /* 动画曲线 */
+  --feishu-ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --feishu-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --feishu-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --feishu-ease-out-back: cubic-bezier(0.34, 0.69, 0.1, 1);
+  
+  /* Z-index层级 */
+  --feishu-z-index-dropdown: 1050;
+  --feishu-z-index-sticky: 1020;
+  --feishu-z-index-fixed: 1030;
+  --feishu-z-index-modal-backdrop: 1040;
+  --feishu-z-index-modal: 1050;
+  --feishu-z-index-popover: 1060;
+  --feishu-z-index-tooltip: 1070;
+  --feishu-z-index-toast: 1080;
+}
+
+/* 深色模式变量 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 中性色 - 深色模式 */
+    --feishu-text-1: #f7f8fa;
+    --feishu-text-2: #c9cdd4;
+    --feishu-text-3: #86909c;
+    --feishu-text-4: #4e5969;
+    
+    /* 背景色 - 深色模式 */
+    --feishu-bg-1: #17171a;
+    --feishu-bg-2: #232324;
+    --feishu-bg-3: #2a2a2b;
+    --feishu-bg-4: #373739;
+    --feishu-bg-5: #4e5969;
+    
+    /* 边框色 - 深色模式 */
+    --feishu-border-1: #2a2a2b;
+    --feishu-border-2: #373739;
+    --feishu-border-3: #4e5969;
+    --feishu-border-4: #86909c;
+    
+    /* 阴影 - 深色模式 */
+    --feishu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --feishu-shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.24), 0 6px 16px rgba(0, 0, 0, 0.16), 0 9px 28px 8px rgba(0, 0, 0, 0.10);
+    --feishu-shadow-3: 0 6px 16px -8px rgba(0, 0, 0, 0.16), 0 9px 28px rgba(0, 0, 0, 0.10), 0 12px 48px 16px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* 基础重置样式 */
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--feishu-bg-2);
+  border-radius: var(--feishu-border-radius-4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--feishu-border-3);
+  border-radius: var(--feishu-border-radius-4);
+  transition: background var(--feishu-duration-normal) var(--feishu-ease-out);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--feishu-border-4);
+}
+
+/* 选择文本样式 */
+::selection {
+  background-color: var(--feishu-primary-light);
+  color: var(--feishu-primary);
+}
+
+::-moz-selection {
+  background-color: var(--feishu-primary-light);
+  color: var(--feishu-primary);
+}
+
+/* 焦点样式 */
+:focus-visible {
+  outline: 2px solid var(--feishu-primary);
+  outline-offset: 2px;
+  border-radius: var(--feishu-border-radius-4);
+}
+
+/* 工具类 */
+.feishu-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 文本工具类 */
+.feishu-text-primary {
+  color: var(--feishu-text-1) !important;
+}
+
+.feishu-text-secondary {
+  color: var(--feishu-text-2) !important;
+}
+
+.feishu-text-tertiary {
+  color: var(--feishu-text-3) !important;
+}
+
+.feishu-text-quaternary {
+  color: var(--feishu-text-4) !important;
+}
+
+.feishu-text-success {
+  color: var(--feishu-success) !important;
+}
+
+.feishu-text-warning {
+  color: var(--feishu-warning) !important;
+}
+
+.feishu-text-error {
+  color: var(--feishu-error) !important;
+}
+
+/* 背景工具类 */
+.feishu-bg-primary {
+  background-color: var(--feishu-bg-1) !important;
+}
+
+.feishu-bg-secondary {
+  background-color: var(--feishu-bg-2) !important;
+}
+
+.feishu-bg-tertiary {
+  background-color: var(--feishu-bg-3) !important;
+}
+
+/* 间距工具类 */
+.feishu-m-0 { margin: 0 !important; }
+.feishu-m-1 { margin: var(--feishu-spacing-4) !important; }
+.feishu-m-2 { margin: var(--feishu-spacing-8) !important; }
+.feishu-m-3 { margin: var(--feishu-spacing-12) !important; }
+.feishu-m-4 { margin: var(--feishu-spacing-16) !important; }
+.feishu-m-5 { margin: var(--feishu-spacing-20) !important; }
+.feishu-m-6 { margin: var(--feishu-spacing-24) !important; }
+
+.feishu-p-0 { padding: 0 !important; }
+.feishu-p-1 { padding: var(--feishu-spacing-4) !important; }
+.feishu-p-2 { padding: var(--feishu-spacing-8) !important; }
+.feishu-p-3 { padding: var(--feishu-spacing-12) !important; }
+.feishu-p-4 { padding: var(--feishu-spacing-16) !important; }
+.feishu-p-5 { padding: var(--feishu-spacing-20) !important; }
+.feishu-p-6 { padding: var(--feishu-spacing-24) !important; }
+
+/* 显示工具类 */
+.feishu-d-none { display: none !important; }
+.feishu-d-block { display: block !important; }
+.feishu-d-inline { display: inline !important; }
+.feishu-d-inline-block { display: inline-block !important; }
+.feishu-d-flex { display: flex !important; }
+.feishu-d-inline-flex { display: inline-flex !important; }
+.feishu-d-grid { display: grid !important; }
+
+/* Flex工具类 */
+.feishu-flex-row { flex-direction: row !important; }
+.feishu-flex-column { flex-direction: column !important; }
+.feishu-flex-wrap { flex-wrap: wrap !important; }
+.feishu-flex-nowrap { flex-wrap: nowrap !important; }
+.feishu-justify-start { justify-content: flex-start !important; }
+.feishu-justify-center { justify-content: center !important; }
+.feishu-justify-end { justify-content: flex-end !important; }
+.feishu-justify-between { justify-content: space-between !important; }
+.feishu-justify-around { justify-content: space-around !important; }
+.feishu-align-start { align-items: flex-start !important; }
+.feishu-align-center { align-items: center !important; }
+.feishu-align-end { align-items: flex-end !important; }
+.feishu-align-stretch { align-items: stretch !important; }
+
+/* 文本对齐工具类 */
+.feishu-text-left { text-align: left !important; }
+.feishu-text-center { text-align: center !important; }
+.feishu-text-right { text-align: right !important; }
+
+/* 字体大小工具类 */
+.feishu-text-xs { font-size: var(--feishu-font-size-12) !important; }
+.feishu-text-sm { font-size: var(--feishu-font-size-14) !important; }
+.feishu-text-base { font-size: var(--feishu-font-size-16) !important; }
+.feishu-text-lg { font-size: var(--feishu-font-size-18) !important; }
+.feishu-text-xl { font-size: var(--feishu-font-size-20) !important; }
+.feishu-text-2xl { font-size: var(--feishu-font-size-24) !important; }
+
+/* 字重工具类 */
+.feishu-font-normal { font-weight: var(--feishu-font-weight-400) !important; }
+.feishu-font-medium { font-weight: var(--feishu-font-weight-500) !important; }
+.feishu-font-semibold { font-weight: var(--feishu-font-weight-600) !important; }
+.feishu-font-bold { font-weight: var(--feishu-font-weight-700) !important; }
+
+/* 圆角工具类 */
+.feishu-rounded-none { border-radius: 0 !important; }
+.feishu-rounded-sm { border-radius: var(--feishu-border-radius-2) !important; }
+.feishu-rounded { border-radius: var(--feishu-border-radius-4) !important; }
+.feishu-rounded-md { border-radius: var(--feishu-border-radius-6) !important; }
+.feishu-rounded-lg { border-radius: var(--feishu-border-radius-8) !important; }
+.feishu-rounded-xl { border-radius: var(--feishu-border-radius-12) !important; }
+.feishu-rounded-full { border-radius: var(--feishu-border-radius-circle) !important; }
+
+/* 阴影工具类 */
+.feishu-shadow-sm { box-shadow: var(--feishu-shadow-1) !important; }
+.feishu-shadow { box-shadow: var(--feishu-shadow-2) !important; }
+.feishu-shadow-lg { box-shadow: var(--feishu-shadow-3) !important; }
+.feishu-shadow-none { box-shadow: none !important; }
+
+/* 响应式断点 */
+@media (max-width: 480px) {
+  .feishu-hidden-xs { display: none !important; }
+}
+
+@media (max-width: 768px) {
+  .feishu-hidden-sm { display: none !important; }
+}
+
+@media (max-width: 992px) {
+  .feishu-hidden-md { display: none !important; }
+}
+
+@media (max-width: 1200px) {
+  .feishu-hidden-lg { display: none !important; }
+}
+
+@media (max-width: 1600px) {
+  .feishu-hidden-xl { display: none !important; }
+}

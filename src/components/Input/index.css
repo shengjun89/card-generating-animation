@@ -1,0 +1,179 @@
+/* 飞书Input组件样式 */
+.feishu-input {
+  /* 基础样式 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+  
+  /* 飞书品牌色 */
+  --feishu-primary: #1664ff;
+  --feishu-primary-hover: #4080ff;
+  --feishu-primary-active: #0e4ba8;
+  --feishu-success: #00b42a;
+  --feishu-warning: #ff7d00;
+  --feishu-error: #f53f3f;
+  
+  /* 中性色 */
+  --feishu-text-1: #1d2129;
+  --feishu-text-2: #4e5969;
+  --feishu-text-3: #86909c;
+  --feishu-text-4: #c9cdd4;
+  
+  /* 背景色 */
+  --feishu-bg-1: #ffffff;
+  --feishu-bg-2: #f7f8fa;
+  --feishu-bg-3: #f2f3f5;
+  --feishu-bg-4: #e5e6eb;
+  
+  /* 边框色 */
+  --feishu-border-1: #f2f3f5;
+  --feishu-border-2: #e5e6eb;
+  --feishu-border-3: #c9cdd4;
+  --feishu-border-4: #86909c;
+}
+
+/* 基础输入框样式 */
+.feishu-input .arco-input {
+  border: 1px solid var(--feishu-border-2);
+  border-radius: 6px;
+  background-color: var(--feishu-bg-1);
+  color: var(--feishu-text-1);
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px 12px;
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+/* 占位符样式 */
+.feishu-input .arco-input::placeholder {
+  color: var(--feishu-text-3);
+  font-size: 14px;
+}
+
+/* 悬停状态 */
+.feishu-input .arco-input:hover {
+  border-color: var(--feishu-border-3);
+  background-color: var(--feishu-bg-1);
+}
+
+/* 聚焦状态 */
+.feishu-input--focused .arco-input,
+.feishu-input .arco-input:focus {
+  border-color: var(--feishu-primary);
+  box-shadow: 0 0 0 2px rgba(22, 100, 255, 0.1);
+  background-color: var(--feishu-bg-1);
+}
+
+/* 禁用状态 */
+.feishu-input--disabled .arco-input,
+.feishu-input .arco-input:disabled {
+  background-color: var(--feishu-bg-2);
+  border-color: var(--feishu-border-1);
+  color: var(--feishu-text-4);
+  cursor: not-allowed;
+}
+
+.feishu-input--disabled .arco-input::placeholder {
+  color: var(--feishu-text-4);
+}
+
+/* 错误状态 */
+.feishu-input--error .arco-input {
+  border-color: var(--feishu-error);
+  background-color: var(--feishu-bg-1);
+}
+
+.feishu-input--error .arco-input:focus {
+  border-color: var(--feishu-error);
+  box-shadow: 0 0 0 2px rgba(245, 63, 63, 0.1);
+}
+
+/* 警告状态 */
+.feishu-input--warning .arco-input {
+  border-color: var(--feishu-warning);
+  background-color: var(--feishu-bg-1);
+}
+
+.feishu-input--warning .arco-input:focus {
+  border-color: var(--feishu-warning);
+  box-shadow: 0 0 0 2px rgba(255, 125, 0, 0.1);
+}
+
+/* 尺寸变体 */
+.feishu-input--small .arco-input {
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.feishu-input--large .arco-input {
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 8px;
+}
+
+/* 前缀和后缀样式 */
+.feishu-input .arco-input-prefix,
+.feishu-input .arco-input-suffix {
+  color: var(--feishu-text-3);
+  font-size: 14px;
+}
+
+.feishu-input--small .arco-input-prefix,
+.feishu-input--small .arco-input-suffix {
+  font-size: 12px;
+}
+
+.feishu-input--large .arco-input-prefix,
+.feishu-input--large .arco-input-suffix {
+  font-size: 16px;
+}
+
+/* 清除按钮样式 */
+.feishu-input .arco-input-clear-btn {
+  color: var(--feishu-text-3);
+  transition: color 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+.feishu-input .arco-input-clear-btn:hover {
+  color: var(--feishu-text-2);
+}
+
+/* 字数统计样式 */
+.feishu-input .arco-input-word-limit {
+  color: var(--feishu-text-3);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .feishu-input .arco-input {
+    font-size: 16px; /* 防止iOS缩放 */
+  }
+  
+  .feishu-input--small .arco-input {
+    font-size: 14px;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .feishu-input {
+    --feishu-text-1: #f7f8fa;
+    --feishu-text-2: #c9cdd4;
+    --feishu-text-3: #86909c;
+    --feishu-text-4: #4e5969;
+    
+    --feishu-bg-1: #17171a;
+    --feishu-bg-2: #232324;
+    --feishu-bg-3: #2a2a2b;
+    --feishu-bg-4: #373739;
+    
+    --feishu-border-1: #2a2a2b;
+    --feishu-border-2: #373739;
+    --feishu-border-3: #4e5969;
+    --feishu-border-4: #86909c;
+  }
+}

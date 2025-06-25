@@ -1,0 +1,305 @@
+/* 飞书Card组件样式 */
+.feishu-card {
+  /* 基础样式 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* 飞书品牌色 */
+  --feishu-primary: #1664ff;
+  --feishu-primary-hover: #4080ff;
+  --feishu-primary-active: #0e4ba8;
+  --feishu-success: #00b42a;
+  --feishu-warning: #ff7d00;
+  --feishu-error: #f53f3f;
+  
+  /* 中性色 */
+  --feishu-text-1: #1d2129;
+  --feishu-text-2: #4e5969;
+  --feishu-text-3: #86909c;
+  --feishu-text-4: #c9cdd4;
+  
+  /* 背景色 */
+  --feishu-bg-1: #ffffff;
+  --feishu-bg-2: #f7f8fa;
+  --feishu-bg-3: #f2f3f5;
+  --feishu-bg-4: #e5e6eb;
+  
+  /* 边框色 */
+  --feishu-border-1: #f2f3f5;
+  --feishu-border-2: #e5e6eb;
+  --feishu-border-3: #c9cdd4;
+  --feishu-border-4: #86909c;
+  
+  /* 阴影 */
+  --feishu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --feishu-shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 基础卡片样式 */
+.feishu-card.arco-card {
+  background-color: var(--feishu-bg-1);
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+  overflow: hidden;
+}
+
+/* 有边框的卡片 */
+.feishu-card--bordered.arco-card-bordered {
+  border: 1px solid var(--feishu-border-2);
+  box-shadow: var(--feishu-shadow-1);
+}
+
+/* 无边框的卡片 */
+.feishu-card:not(.feishu-card--bordered) {
+  border: none;
+  box-shadow: var(--feishu-shadow-1);
+}
+
+/* 可悬浮的卡片 */
+.feishu-card--hoverable.arco-card-hoverable:hover {
+  box-shadow: var(--feishu-shadow-2);
+  transform: translateY(-2px);
+  border-color: var(--feishu-border-3);
+}
+
+/* 卡片头部 */
+.feishu-card .arco-card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--feishu-border-1);
+  background-color: var(--feishu-bg-1);
+  min-height: auto;
+}
+
+.feishu-card--small .arco-card-header {
+  padding: 12px 16px;
+}
+
+/* 卡片标题 */
+.feishu-card .arco-card-header-title {
+  color: var(--feishu-text-1);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+}
+
+.feishu-card--small .arco-card-header-title {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* 卡片额外操作区域 */
+.feishu-card .arco-card-header-extra {
+  color: var(--feishu-text-2);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.feishu-card--small .arco-card-header-extra {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* 卡片内容区域 */
+.feishu-card .arco-card-body {
+  padding: 12px;
+  color: var(--feishu-text-1);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.feishu-card--small .arco-card-body {
+  padding: 16px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* 没有标题时的内容区域 */
+.feishu-card .arco-card:not(.arco-card-has-title) .arco-card-body {
+  padding-top: 20px;
+}
+
+.feishu-card--small .arco-card:not(.arco-card-has-title) .arco-card-body {
+  padding-top: 16px;
+}
+
+/* 卡片封面 */
+.feishu-card .arco-card-cover {
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.feishu-card .arco-card-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+.feishu-card--hoverable .arco-card-cover img:hover {
+  transform: scale(1.02);
+}
+
+/* 卡片操作区域 */
+.feishu-card .arco-card-actions {
+  border-top: 1px solid var(--feishu-border-1);
+  background-color: var(--feishu-bg-2);
+  padding: 0;
+  display: flex;
+}
+
+.feishu-card .arco-card-actions .arco-card-actions-item {
+  flex: 1;
+  padding: 12px 16px;
+  text-align: center;
+  color: var(--feishu-text-2);
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+  border-right: 1px solid var(--feishu-border-1);
+}
+
+.feishu-card .arco-card-actions .arco-card-actions-item:last-child {
+  border-right: none;
+}
+
+.feishu-card .arco-card-actions .arco-card-actions-item:hover {
+  background-color: var(--feishu-bg-3);
+  color: var(--feishu-primary);
+}
+
+.feishu-card--small .arco-card-actions .arco-card-actions-item {
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* 加载状态 */
+.feishu-card--loading .arco-card-body {
+  position: relative;
+  min-height: 120px;
+}
+
+.feishu-card--loading .arco-card-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--feishu-primary);
+}
+
+/* 卡片内的分割线 */
+.feishu-card .feishu-divider {
+  margin: 16px 0;
+  border-top: 1px solid var(--feishu-border-1);
+}
+
+.feishu-card--small .feishu-divider {
+  margin: 12px 0;
+}
+
+/* 卡片内的段落 */
+.feishu-card .arco-card-body p {
+  margin: 0 0 12px 0;
+  color: var(--feishu-text-1);
+  line-height: 1.6;
+}
+
+.feishu-card .arco-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 卡片内的列表 */
+.feishu-card .arco-card-body ul,
+.feishu-card .arco-card-body ol {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
+  color: var(--feishu-text-1);
+}
+
+.feishu-card .arco-card-body li {
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .feishu-card .arco-card-header {
+    padding: 12px 16px;
+  }
+  
+  .feishu-card .arco-card-body {
+    padding: 16px;
+  }
+  
+  .feishu-card .arco-card-actions .arco-card-actions-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feishu-card .arco-card-header {
+    padding: 10px 12px;
+  }
+  
+  .feishu-card .arco-card-body {
+    padding: 12px;
+  }
+  
+  .feishu-card .arco-card-header-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .feishu-card .arco-card-actions .arco-card-actions-item {
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .feishu-card {
+    --feishu-text-1: #f7f8fa;
+    --feishu-text-2: #c9cdd4;
+    --feishu-text-3: #86909c;
+    --feishu-text-4: #4e5969;
+    
+    --feishu-bg-1: #17171a;
+    --feishu-bg-2: #232324;
+    --feishu-bg-3: #2a2a2b;
+    --feishu-bg-4: #373739;
+    
+    --feishu-border-1: #2a2a2b;
+    --feishu-border-2: #373739;
+    --feishu-border-3: #4e5969;
+    --feishu-border-4: #86909c;
+    
+    --feishu-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.16), 0 1px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --feishu-shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.24), 0 6px 16px rgba(0, 0, 0, 0.16), 0 9px 28px 8px rgba(0, 0, 0, 0.10);
+  }
+}
+
+/* 卡片组合样式 */
+.feishu-card-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .feishu-card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* 卡片内的表单元素样式调整 */
+.feishu-card .arco-card-body .arco-form-item {
+  margin-bottom: 16px;
+}
+
+.feishu-card .arco-card-body .arco-form-item:last-child {
+  margin-bottom: 0;
+}

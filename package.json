@@ -1,0 +1,53 @@
+{
+  "name": "feishu-react-components",
+  "private": true,
+  "version": "1.0.0",
+  "description": "飞书React组件封装项目",
+  "main": "src/components/index.js",
+  "module": "src/components/index.js",
+  "types": "src/components/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/components/index.js",
+      "require": "./src/components/index.js",
+      "types": "./src/components/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
+  },
+  "keywords": [
+    "feishu",
+    "react",
+    "components",
+    "ui"
+  ],
+  "author": "ByteDance Developer",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@arco-design/web-react": "^2.60.0",
+    "@arco-design/color": "^0.4.0",
+    "classnames": "^2.3.2",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "vite": "^4.4.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}

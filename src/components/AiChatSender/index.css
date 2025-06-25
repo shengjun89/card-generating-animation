@@ -1,0 +1,787 @@
+/* AiChatSender 组件样式 */
+.feishu-dai-chat-sender {
+  /* 基础样式 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* 飞书品牌色 */
+  --feishu-primary: #1664ff;
+  --feishu-primary-hover: #4080ff;
+  --feishu-primary-active: #0e4ba8;
+  --feishu-success: #00b42a;
+  --feishu-warning: #ff7d00;
+  --feishu-error: #f53f3f;
+  
+  /* 中性色 */
+  --feishu-text-1: #1d2129;
+  --feishu-text-2: #4e5969;
+  --feishu-text-3: #86909c;
+  --feishu-text-4: #c9cdd4;
+  
+  /* 背景色 */
+  --feishu-bg-1: #ffffff;
+  --feishu-bg-2: #f7f8fa;
+  --feishu-bg-3: #f2f3f5;
+  --feishu-bg-4: #e5e6eb;
+  
+  /* 边框色 */
+  --feishu-border-1: #f2f3f5;
+  --feishu-border-2: #e5e6eb;
+  --feishu-border-3: #c9cdd4;
+  --feishu-border-4: #86909c;
+}
+
+/* 主容器样式 */
+.dai-chat-sender.feishu-card {
+  padding: 0;
+  background-color: var(--feishu-bg-1);
+  border-radius: 16px;
+  border: 0.5px solid var(--feishu-border-2);
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dai-chat-sender:hover {
+  border-color: var(--feishu-border-2);
+  box-shadow: 0px 0px 2px 0px rgba(39, 39, 130, 0.12), 0px 10px 24px 0px rgba(80, 131, 251, 0.10);
+}
+
+.dai-chat-sender:focus-within {
+  border-color: var(--feishu-border-3);
+  /* box-shadow: 0 0 0 2px rgba(22, 100, 255, 0.1); */
+  box-shadow: 0px 0px 2px 0px rgba(39, 39, 130, 0.12), 0px 10px 24px 0px rgba(80, 131, 251, 0.10);
+}
+
+/* Upload 组件样式 */
+.dai-chat-sender .arco-upload.arco-upload-type-text {
+  border-radius: 100px;
+  border: 0.5px solid #dee0e3;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.dai-chat-sender .arco-upload.arco-upload-type-text:hover {
+  border-radius: 100px;
+  background-color: #f2f3f5;
+  border-color: #dee0e3;
+}
+
+.dai-chat-sender .feishu-button--text.arco-btn-text:hover {
+  background-color: var(--feishu-bg-2);
+  color: #2B2F36;
+  border-radius: 100px;
+}
+
+.dai-chat-sender .arco-icon[stroke='currentColor'] {
+  stroke: var(--token-icon-n1, #2B2F36);
+  fill: none;
+}
+
+/* 激活状态下的图标颜色 */
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active .arco-icon[stroke='currentColor'] {
+  stroke: #1456f0;
+}
+
+/* 禁用状态 */
+.dai-chat-sender--disabled {
+  background-color: var(--feishu-bg-3);
+  border-color: var(--feishu-border-2);
+  cursor: not-allowed;
+}
+
+.dai-chat-sender--disabled:hover {
+  border-color: var(--feishu-border-2);
+  box-shadow: none;
+}
+
+/* 加载状态 */
+.dai-chat-sender--loading {
+  opacity: 0.8;
+}
+
+/* 内容区域 */
+.dai-chat-sender__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+  max-height: inherit;
+  align-items: stretch;
+}
+
+/* 输入内容区域 */
+.dai-chat-sender__input-content {
+  flex: 1;
+  padding: 4px 0px 8px 0px;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.dai-chat-sender__input-area {
+  width: 100%;
+  min-height: 24px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* 文本输入框样式 */
+.dai-chat-sender__textarea {
+  width: 100%;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--feishu-text-1);
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+}
+
+.dai-chat-sender__textarea::placeholder {
+  color: var(--feishu-text-3);
+}
+
+.dai-chat-sender__textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* 工具栏样式 */
+.dai-chat-sender__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0px 0px 0px;
+  /* border-top: 1px solid var(--feishu-border-1); */
+  /* background-color: var(--feishu-bg-2); */
+}
+
+/* 左侧工具按钮组 */
+.dai-chat-sender__left-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 工具按钮样式 - 优化后的结构 */
+.dai-chat-sender__tool-btn {
+  position: relative;
+  width: auto;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+.dai-chat-sender__tool-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 边框层 */
+.dai-chat-sender__tool-btn-border {
+  position: absolute;
+  inset: 0;
+  border: 0.5px solid #dee0e3;
+  border-radius: 100px;
+  pointer-events: none;
+  transition: border-color 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+/* 内容容器 */
+.dai-chat-sender__tool-btn-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* 内部布局容器 */
+.dai-chat-sender__tool-btn-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 6px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 图标容器 */
+.dai-chat-sender__tool-btn-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.dai-chat-sender__tool-btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* Figma 图标 SVG 容器样式 */
+.dai-chat-sender__tool-btn-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.dai-chat-sender__tool-btn-icon-svg img {
+  filter: brightness(0) saturate(100%) invert(0.2) sepia(0.1) saturate(0.5) hue-rotate(200deg);
+  transition: filter 0.2s ease;
+}
+
+/* 悬停状态下的图标颜色 */
+.dai-chat-sender__tool-btn:hover .dai-chat-sender__tool-btn-icon-svg img {
+  filter: brightness(0) saturate(100%) invert(0.3) sepia(0.8) saturate(2) hue-rotate(220deg) brightness(0.9);
+}
+
+/* 激活状态下的图标颜色 */
+.dai-chat-sender__tool-btn--toggle .dai-chat-sender__tool-btn-icon-svg img,
+.dai-chat-sender__tool-btn--active .dai-chat-sender__tool-btn-icon-svg img {
+  filter: brightness(0) saturate(100%) invert(0.08) sepia(0.93) saturate(4) hue-rotate(220deg) brightness(0.95);
+}
+
+.dai-chat-sender__tool-btn-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #2b2f36;
+  transition: color 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+/* 文字标签 */
+.dai-chat-sender__tool-btn-text {
+  flex-shrink: 0;
+  font-family: 'PingFang SC', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #1f2329;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+/* Hover 状态 */
+.dai-chat-sender__tool-btn:hover .dai-chat-sender__tool-btn-border {
+  border-color: #dee0e3;
+}
+
+.dai-chat-sender__tool-btn:hover {
+  background-color: #f2f3f5;
+}
+
+/* Toggle 按钮样式 */
+.dai-chat-sender__tool-btn--toggle {
+  position: relative;
+}
+
+/* 激活状态 */
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active {
+  background-color: #e0e9ff;
+}
+
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active .dai-chat-sender__tool-btn-border {
+  border-color: transparent;
+}
+
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active .dai-chat-sender__tool-btn-text {
+  color: #1456f0;
+}
+
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active .dai-chat-sender__tool-btn-icon svg {
+  color: #1456f0;
+}
+
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active .dai-chat-sender__tool-btn-icon-svg img {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(89%) saturate(1686%) hue-rotate(213deg) brightness(97%) contrast(91%);
+}
+
+.dai-chat-sender__tool-btn--toggle.dai-chat-sender__tool-btn--active:hover {
+  background-color: #e0e9ff;
+}
+
+/* 右侧控制区 */
+.dai-chat-sender__right-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 模型选择器样式 */
+.dai-chat-sender__model-selector {
+  min-width: 120px;
+}
+
+.dai-chat-sender__model-selector .arco-select-view {
+  border-radius: 6px;
+  border-color: var(--feishu-border-3);
+  background-color: var(--feishu-bg-1);
+  font-size: 13px;
+  height: 32px;
+}
+
+.dai-chat-sender__model-selector .arco-select-view:hover {
+  border-radius: 50%;
+  border: none;
+}
+
+.dai-chat-sender__model-selector .arco-select-view-value {
+  color: var(--feishu-text-2);
+  font-weight: 500;
+}
+
+/* 下拉菜单样式 - 覆盖全局样式 */
+.dai-chat-sender .arco-select:focus,
+.dai-chat-sender .arco-select:active,
+.dai-chat-sender .arco-select .arco-select-view:focus,
+.dai-chat-sender .arco-select .arco-select-view:active,
+.dai-chat-sender .arco-select.arco-select-focused,
+.dai-chat-sender .arco-select.arco-select-focused .arco-select-view {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 50% !important;
+  border: none !important;
+}
+
+.dai-chat-sender__model-selector .arco-select-view.arco-select-view-focus {
+  border-radius: 50%;
+  border: none;
+}
+
+.dai-chat-sender__model-selector .arco-select-view.arco-select-view-open {
+  border-radius: 50%;
+  border: none;
+}
+
+/* 发送按钮样式 - 基于 Figma 设计 */
+.dai-chat-sender__send-btn {
+  /* 基础样式 */
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* 主要状态 - 默认蓝色 */
+.dai-chat-sender__send-btn.feishu-button--primary {
+  background: #1456F0;
+  color: #ffffff;
+  border: none;
+}
+
+.dai-chat-sender__send-btn.feishu-button--primary:hover {
+  background: #0E4BC7;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(20, 86, 240, 0.3);
+}
+
+.dai-chat-sender__send-btn.feishu-button--primary:active {
+  background: #0A3A9E;
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(20, 86, 240, 0.2);
+}
+
+/* 轮廓状态 - 停止生成 */
+.dai-chat-sender__send-btn.feishu-button--outline {
+  background: #ffffff;
+  border: 1px solid #E5E6EB;
+  color: #1F2329;
+}
+
+.dai-chat-sender__send-btn.feishu-button--outline:hover {
+  border-color: #1456F0;
+  color: #1456F0;
+  background: #F7F9FF;
+}
+
+/* 禁用状态 - 灰色半透明 */
+.dai-chat-sender__send-btn:disabled,
+.dai-chat-sender__send-btn.feishu-button--secondary:disabled {
+  background: rgba(31, 35, 41, 0.15) !important;
+  color: #ffffff !important;
+  border: none !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  transform: none !important;
+  opacity: 1;
+}
+
+/* 加载状态 */
+.dai-chat-sender__send-btn.feishu-button--loading {
+  background: #1456F0;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* 图标样式 */
+.dai-chat-sender__send-btn .arco-icon {
+  font-size: 14px;
+  line-height: 14px;
+  transition: transform 0.2s ease;
+  color: #ffffff !important;
+}
+
+/* 发送按钮图标不继承通用stroke样式 */
+.dai-chat-sender__send-btn .arco-icon[stroke='currentColor'] {
+  stroke: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* 发送箭头样式 */
+.dai-chat-sender__send-btn::before {
+  content: '→';
+  font-family: 'PingFang SC', sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  color: inherit;
+  display: none;
+}
+
+/* 当使用文本箭头时显示 */
+.dai-chat-sender__send-btn--text-arrow::before {
+  display: block;
+}
+
+.dai-chat-sender__send-btn--text-arrow .arco-icon {
+  display: none;
+}
+
+/* 聚焦状态 */
+.dai-chat-sender__send-btn:focus-visible {
+  outline: 2px solid #1456F0;
+  outline-offset: 2px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .dai-chat-sender__send-btn {
+    min-width: 32px;
+    min-height: auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    padding: 8px;
+  }
+
+  /* 发送按钮继承 arco-btn 样式 */
+  .dai-chat-sender .arco-btn-size-default.arco-btn-icon-only {
+    padding: 0 !important;
+    min-width: 36px !important;
+    width: 36px;
+    height: 36px;
+    max-height: 36px !important;
+    border-radius: 18px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dai-chat-sender__send-btn .arco-icon,
+  .dai-chat-sender__send-btn::before {
+    font-size: 12px;
+  }
+
+  .dai-chat-sender.arco-card-size-default .arco-card-body {
+    padding: 8px 16px 8px 16px;
+    transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* 加载动画 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dai-chat-sender__send-btn .arco-icon-loading {
+  animation: spin 1s linear infinite;
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .dai-chat-sender__send-btn.feishu-button--outline {
+    background: #2B2F36;
+    border-color: #4E5969;
+    color: #C9CDD4;
+  }
+  
+  .dai-chat-sender__send-btn.feishu-button--outline:hover {
+    background: #373B42;
+    border-color: #1456F0;
+    color: #1456F0;
+  }
+}
+
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+  .dai-chat-sender__send-btn,
+  .dai-chat-sender__send-btn .arco-icon {
+    transition: none;
+  }
+  
+  .dai-chat-sender__send-btn .arco-icon-loading {
+    animation: none;
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .dai-chat-sender__send-btn.feishu-button--primary {
+    border: 2px solid #1456F0;
+  }
+  
+  .dai-chat-sender__send-btn:disabled {
+    border: 2px solid rgba(31, 35, 41, 0.3) !important;
+  }
+}
+
+/* 禁用状态下的图标颜色 */
+.dai-chat-sender__send-btn:disabled .arco-icon {
+  color: #ffffff !important;
+}
+
+.dai-chat-sender__send-btn:disabled .arco-icon[stroke='currentColor'] {
+  stroke: #ffffff !important;
+}
+
+/* 文本箭头样式 */
+.dai-chat-sender__send-btn span {
+  display: inline-block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* 确保文本箭头在所有状态下都是白色 */
+.dai-chat-sender__send-btn span {
+  color: #ffffff !important;
+}
+
+/* 禁用状态下的文本箭头 */
+.dai-chat-sender__send-btn:disabled span {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* 停止按钮 SVG 样式 */
+.dai-chat-sender__send-btn svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* 确保 SVG 在按钮中居中显示 */
+.dai-chat-sender__send-btn.feishu-button--outline svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .dai-chat-sender__toolbar {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .dai-chat-sender__input-content {
+    padding: 8px 12px;
+  }
+
+  .dai-chat-sender__left-tools {
+    gap: 8px;
+  }
+
+  .dai-chat-sender__right-controls {
+    gap: 8px;
+  }
+
+  .dai-chat-sender__model-selector {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .dai-chat-sender__tool-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dai-chat-sender__tool-btn-inner {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .dai-chat-sender__tool-btn-text {
+    display: none;
+  }
+
+  .dai-chat-sender__send-btn {
+    min-height: auto;
+    width: 32px;
+    height: 32px;
+  }
+
+  .arco-upload-trigger{
+    padding: 0 !important;
+    min-width: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    
+    border-radius: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* 动画效果 */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dai-chat-sender__send-btn.feishu-button--loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+  .dai-chat-sender {
+    --feishu-text-1: #f7f8fa;
+    --feishu-text-2: #c9cdd4;
+    --feishu-text-3: #86909c;
+    --feishu-text-4: #4e5969;
+    
+    --feishu-bg-1: #17171a;
+    --feishu-bg-2: #232324;
+    --feishu-bg-3: #2a2a2b;
+    --feishu-bg-4: #373739;
+    
+    --feishu-border-1: #2a2a2b;
+    --feishu-border-2: #373739;
+    --feishu-border-3: #4e5969;
+    --feishu-border-4: #86909c;
+  }
+}
+
+/* 无障碍支持 */
+.dai-chat-sender__tool-btn:focus-visible,
+.dai-chat-sender__send-btn:focus-visible {
+  outline: 2px solid var(--feishu-primary);
+  outline-offset: 2px;
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .dai-chat-sender {
+    --feishu-border-2: #000000;
+    --feishu-border-3: #000000;
+  }
+  
+  .dai-chat-sender__toolbar {
+    border-top-color: #000000;
+  }
+}
+
+/* 特化 arco-card-body 的 padding 样式，覆盖 arco-card-size-default */
+.dai-chat-sender.arco-card-size-default .arco-card-body {
+  padding: 8px 16px 16px 16px;
+}
+
+/* 768px断点下的特殊样式 */
+@media (max-width: 768px) {
+  .dai-chat-sender.arco-card-size-default .arco-card-body {
+    padding: 8px 16px 8px 16px !important;
+  }
+}
+
+/* 特化 arco-textarea 的样式 */
+.dai-chat-sender .arco-textarea {
+  padding: 4px 0px !important;
+  font-size: 16px !important;
+}
+
+/* 特化具体生效的类组合 arco-textarea dai-chat-sender__textarea */
+.dai-chat-sender .arco-textarea.dai-chat-sender__textarea {
+  resize: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  min-height: 30px !important;
+  max-height: 300px !important;
+  padding: 4px 0px !important;
+  font-size: 16px !important;
+}
+
+/* 特化 arco-select 的背景为透明 */
+.dai-chat-sender .arco-select {
+  background: transparent !important;
+}
+
+.dai-chat-sender .arco-select .arco-select-view {
+  background: transparent !important;
+}
+
+/* 特化 arco-select 的 hover 样式 */
+.dai-chat-sender .arco-select:hover,
+.dai-chat-sender .arco-select .arco-select-view:hover {
+  border-radius: 100px !important;
+  background: var(--udtoken-btn-se-bg-neutral-hover, #F2F3F5) !important;
+}
+
+/* 特化 arco-select 的 focus 和 active 状态，移除蓝色描边 */
+.dai-chat-sender .arco-select:focus,
+.dai-chat-sender .arco-select:active,
+.dai-chat-sender .arco-select .arco-select-view:focus,
+.dai-chat-sender .arco-select .arco-select-view:active,
+.dai-chat-sender .arco-select.arco-select-focused,
+.dai-chat-sender .arco-select.arco-select-focused .arco-select-view {
+  border-color: var(--feishu-border-3) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 特化 arco-textarea 的 focus 和 active 状态，与 hover 边框颜色统一 */
+.dai-chat-sender .arco-textarea:focus,
+.dai-chat-sender .arco-textarea:active {
+  border-color: var(--feishu-border-3) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}

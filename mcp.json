@@ -1,7 +1,15 @@
 {
   "mcpServers": {
+    "Figma": {
+      "url": "http://127.0.0.1:3845/sse",
+      "settings": {
+        "mcp.serialization.inline_instances": true,
+        "mcp.include_variant_definitions": true,
+        "code_connect.enabled": true
+      }
+    },
     "Zapier": {
-      "url": "https://mcp.zapier.com/api/mcp/s/NjRkNTNhNjAtZTQ0Yy00OTNhLWFmNmMtY2Y3NDBjY2VkMDMwOmNjZjkyMmQwLWM1ODktNDU5Ny05YWYzLWNmZTlhZTNiZDkxZQ==/mcp"
+      "url": "https://mcp.zapier.com/api/mcp/s/Y2ZjYjNhMmQtYmUyOC00YWZjLTliY2QtZGQzZGUwNWIxY2MyOjMzOWY1N2EyLWU1ZjQtNDJjZi05Mjk4LWUyYWE2ZmZhYmM3YQ==/mcp"
     }
   }
 }

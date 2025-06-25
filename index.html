@@ -1,121 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>加载页面</title>
-    <style>
-        :root {
-            --token-text-placeholder: #8F959E;
-        }
-        
-        body {
-            margin: 0 auto;
-            padding: 360px 0;
-            background-color: #F2F3F5;
-        }
-        
-        .loading-container {
-            width: 313px;
-            height: 5px;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .gif-container {
-            width: 156px;
-            height: 140px;
-            display: flex;
-            justify-content: flex-start;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .gif-placeholder {
-            width: 45px;
-            height: 137px;
-            flex-shrink: 0;
-            margin: 0 4px;
-        }
-
-        .gif-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .progress-bg {
-            width: 313px;
-            height: 5px;
-            left: 0;
-            top: 0;
-            position: absolute;
-            background: white;
-            border-radius: 4px;
-        }
-
-        .progress-bar {
-            width: 0;
-            height: 5px;
-            left: 0;
-            top: 0px;
-            position: absolute;
-            background: linear-gradient(87deg, #32D9FF 0%, #287EFF 49%, #732DFF 100%);
-            border-radius: 6px;
-            border: 1px white solid;
-            transition: all 60s linear;
-        }
-
-        .loading-text {
-            opacity: 0.60;
-            color: var(--token-text-placeholder);
-            font-size: 14px;
-            font-family: PingFang SC;
-            font-weight: 500;
-            line-height: 22px;
-            word-wrap: break-word;
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>飞书React组件库</title>
+  <meta name="description" content="基于Arco Design封装的飞书风格React组件库" />
+  <meta name="keywords" content="飞书,React,组件库,Arco Design,UI" />
+  
+  <!-- 飞书品牌色彩 -->
+  <meta name="theme-color" content="#1664FF" />
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- 飞书字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 初始化样式，避免闪烁 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      font-weight: 400;
+      color-scheme: light dark;
+      color: rgba(255, 255, 255, 0.87);
+      background-color: #242424;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    body {
+      margin: 0;
+      display: flex;
+      place-items: center;
+      min-width: 320px;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    #root {
+      width: 100%;
+      margin: 0;
+      text-align: left;
+    }
+    
+    /* 加载动画 */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 16px;
+      color: #1664FF;
+    }
+    
+    .loading::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #1664FF;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* 响应式网格布局 */
+    .feishu-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .feishu-card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    
+    /* 暗色模式适配 */
+    @media (prefers-color-scheme: dark) {
+      html {
+        color: #ffffff;
+        background-color: #0f0f0f;
+      }
+      
+      body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="gif-container">
-    <div class="gif-placeholder">
-        <img src="img/Flow 4@2x-25fps.gif" alt="Loading animation" onmouseover="this.src='img/Flow 6@2x-25fps.gif'" onmouseout="this.src='img/Flow 4@2x-25fps.gif'">
+  <div id="root">
+    <div class="loading">
+      正在加载飞书组件库
     </div>
-    <div class="gif-placeholder">
-        <img src="img/Flow 5@2x-25fps.gif" alt="Loading animation" onmouseover="this.src='img/Flow 6@2x-25fps.gif'" onmouseout="this.src='img/Flow 5@2x-25fps.gif'">
-    </div>
-    <div class="gif-placeholder">
-        <img src="img/Flow 3@2x-25fps.gif" alt="Loading animation" onmouseover="this.src='img/Flow 6@2x-25fps.gif'" onmouseout="this.src='img/Flow 3@2x-25fps.gif'">
-    </div>
-    
-</div>
-    <div class="loading-container"> 
-        <div class="progress-container">
-            <div class="progress-bg"></div>
-            <div class="progress-bar"></div>
-        </div>
-        
-        <div class="loading-text">开始生成卡片, 预计耗时 1 分钟</div>
-    </div>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
-<script>
-    window.onload = function() {
-        setTimeout(() => {
-            const progressBar = document.querySelector('.progress-bar');
-            progressBar.style.width = '313px';
-            <!-- progressBar.style.left = '313px'; -->
-        }, 100); // 短暂延迟确保过渡效果生效
-    };
-</script>
 </html>
