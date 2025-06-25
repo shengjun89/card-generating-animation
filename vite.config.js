@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/card-generating-animation/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -35,18 +36,10 @@ export default defineConfig({
     host: true
   },
   build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/index.js'),
-      name: 'FeishuReactComponents',
-      fileName: (format) => `feishu-react-components.${format}.js`
-    },
+    outDir: 'dist',
     rollupOptions: {
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
+      input: {
+        main: path.resolve(__dirname, 'index.html')
       }
     }
   }
