@@ -68,7 +68,7 @@ export default App
 ## 📖 文档
 
 - 📚 [完整开发者指南](./COMPONENT_GUIDE.md) - 详细的API文档和使用示例
-- 🎨 [设计规范](https://feishu.cn/design) - 飞书官方设计规范
+- 🎨 [设计规范](https://universe.bytedance.net/) - 飞书官方设计规范
 - 🔧 [Arco Design](https://arco.design/react/docs/start) - 底层UI框架文档
 
 ## 🎯 核心组件 - AiChatSender
