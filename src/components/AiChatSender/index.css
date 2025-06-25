@@ -336,7 +336,7 @@
 }
 
 .dai-chat-sender__model-selector .arco-select-view:hover {
-  border-radius: 50%;
+  border-radius: 100px;
   border: none;
 }
 
@@ -355,17 +355,17 @@
   border-color: transparent !important;
   box-shadow: none !important;
   outline: none !important;
-  border-radius: 50% !important;
+  border-radius: 100px !important;
   border: none !important;
 }
 
 .dai-chat-sender__model-selector .arco-select-view.arco-select-view-focus {
-  border-radius: 50%;
+  border-radius: 100px;
   border: none;
 }
 
 .dai-chat-sender__model-selector .arco-select-view.arco-select-view-open {
-  border-radius: 50%;
+  border-radius: 100px;
   border: none;
 }
 
@@ -784,4 +784,27 @@
   border-color: var(--feishu-border-3) !important;
   box-shadow: none !important;
   outline: none !important;
+}
+
+/* 下拉选择器弹出菜单样式 */
+.arco-select-dropdown {
+  border-radius: 12px !important;
+  border: 1px solid var(--feishu-border-2) !important;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08) !important;
+}
+
+.arco-select-dropdown .arco-select-option {
+  border-radius: 8px !important;
+  margin: 4px 8px !important;
+}
+
+.arco-select-dropdown .arco-select-option:hover {
+  background-color: var(--feishu-bg-2) !important;
+  border-radius: 8px !important;
+}
+
+.arco-select-dropdown .arco-select-option.arco-select-option-selected {
+  background-color: var(--feishu-primary) !important;
+  color: white !important;
+  border-radius: 8px !important;
 }
